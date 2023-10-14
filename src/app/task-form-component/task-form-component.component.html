@@ -1,0 +1,12 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+        <div class="form-group">
+            <label for="task">Tareas</label>
+            <input type="text" class="form-control" id="task" placeholder="Nueva Tarea" ngModel name="task" required>
+            <small *ngIf="taskForm.invalid && taskForm.dirty" id="errorMessage" class="form-text text-danger">Campo
+                requerido</small>
+        </div>
+        <button [disabled]="taskForm.invalid" id="submitButton" type="submit" class="btn btn-primary">Crear
+            tarea</button>
+    </form>
+</div>
